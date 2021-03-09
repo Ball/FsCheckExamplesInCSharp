@@ -7,7 +7,7 @@ namespace ExampleLib
         private int n;
         public void Inc()
         {
-            if(n == 2) { n++; }
+            if (n == 2) { n++; }
             n++;
         }
 

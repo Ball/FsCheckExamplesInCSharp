@@ -1,4 +1,3 @@
-// import fast-check as fc
 import * as fc from 'fast-check';
 
 module
@@ -12,23 +11,23 @@ describe("a suite", () => {
     })
 })
 
-describe('stuff', () =>{
+describe('stuff', () => {
     it('bad example', () => {
-        const i = indexOf("!",  "!")
+        const i = indexOf("!", "!")
         expect(i).toBe(0)
     })
 })
 
 describe('property based tests', () => {
-    it('should always contain itself', () =>{
-        fc.assert(fc.property(fc.string(), (text:string) => indexOf(text,text) !== -1));
+    it('should always contain itself', () => {
+        fc.assert(fc.property(fc.string(), (text: string) => indexOf(text, text) !== -1));
     });
     xit('should always contain substrings', () => {
         fc.assert(
             fc.property(fc.string(), fc.string(), fc.string(),
-                (a:string,b:string,c:string) => {
+                (a: string, b: string, c: string) => {
                     return indexOf(b, a + b + c) !== -1;
-            })
+                })
         )
     })
 })
